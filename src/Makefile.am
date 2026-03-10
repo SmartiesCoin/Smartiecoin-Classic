@@ -49,8 +49,8 @@ EXTRA_LIBRARIES += libbitcoin_zmq.a
 endif
 
 if BUILD_BITCOIN_LIBS
-lib_LTLIBRARIES = libsmartiecoinconsensus.la
-LIBBITCOIN_CONSENSUS=libsmartiecoinconsensus.la
+lib_LTLIBRARIES = libsmartiecoinclassicconsensus.la
+LIBBITCOIN_CONSENSUS=libsmartiecoinclassicconsensus.la
 else
 LIBBITCOIN_CONSENSUS=
 endif
