@@ -73,10 +73,10 @@ QString BitcoinUnits::description(int unit)
     {
         switch(unit)
         {
-            case SMARTIE: return QString("Smartiecoin");
-            case mSMARTIE: return QString("Milli-Smartiecoin (1 / 1" THIN_SP_UTF8 "000)");
-            case uSMARTIE: return QString("Micro-Smartiecoin (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
-            case veffs: return QString("Ten Nano-Smartiecoin (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            case SMARTIE: return QString("Smartie Coin Classic");
+            case mSMARTIE: return QString("Milli-SmartieCoinClassic (1 / 1" THIN_SP_UTF8 "000)");
+            case uSMARTIE: return QString("Micro-SmartieCoinClassic (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            case veffs: return QString("Ten Nano-SmartieCoinClassic (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
             default: return QString("???");
         }
     }
@@ -84,10 +84,10 @@ QString BitcoinUnits::description(int unit)
     {
         switch(unit)
         {
-            case SMARTIE: return QString("TestSmartiecoins");
-            case mSMARTIE: return QString("Milli-TestSmartiecoin (1 / 1" THIN_SP_UTF8 "000)");
-            case uSMARTIE: return QString("Micro-TestSmartiecoin (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
-            case veffs: return QString("Ten Nano-TestSmartiecoin (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            case SMARTIE: return QString("TestSmartieCoinClassic");
+            case mSMARTIE: return QString("Milli-TestSmartieCoinClassic (1 / 1" THIN_SP_UTF8 "000)");
+            case uSMARTIE: return QString("Micro-TestSmartieCoinClassic (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            case veffs: return QString("Ten Nano-TestSmartieCoinClassic (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
             default: return QString("???");
         }
     }

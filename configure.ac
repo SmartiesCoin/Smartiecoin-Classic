@@ -1,12 +1,12 @@
 dnl require autoconf 2.60 (AS_ECHO/AS_ECHO_N)
 AC_PREREQ([2.60])
 define(_CLIENT_VERSION_MAJOR, 1)
-define(_CLIENT_VERSION_MINOR, 2)
+define(_CLIENT_VERSION_MINOR, 13)
 define(_CLIENT_VERSION_REVISION, 0)
-define(_CLIENT_VERSION_BUILD, 8)
+define(_CLIENT_VERSION_BUILD, 0)
 define(_CLIENT_VERSION_IS_RELEASE, true)
-define(_COPYRIGHT_YEAR, 2020)
-AC_INIT([Smartiecoin Core],[_CLIENT_VERSION_MAJOR._CLIENT_VERSION_MINOR._CLIENT_VERSION_REVISION],[https://github.com/vishcoin/smartiecoin/issues],[smartiecoin])
+define(_COPYRIGHT_YEAR, 2026)
+AC_INIT([Smartie Coin Classic],[_CLIENT_VERSION_MAJOR._CLIENT_VERSION_MINOR._CLIENT_VERSION_REVISION],[https://github.com/SmartiesCoin/smartiecoin-legacy/issues],[smartiecoin-classic])
 AC_CONFIG_SRCDIR([src/validation.cpp])
 AC_CONFIG_HEADERS([src/config/smartiecoin-config.h])
 AC_CONFIG_AUX_DIR([build-aux])
@@ -14,9 +14,9 @@ AC_CONFIG_MACRO_DIR([build-aux/m4])
 
 AC_CANONICAL_HOST
 
-AH_TOP([#ifndef SMARITECOIN_CONFIG_H])
-AH_TOP([#define SMARITECOIN_CONFIG_H])
-AH_BOTTOM([#endif //SMARITECOIN_CONFIG_H])
+AH_TOP([#ifndef SMARTIECOIN_CLASSIC_CONFIG_H])
+AH_TOP([#define SMARTIECOIN_CLASSIC_CONFIG_H])
+AH_BOTTOM([#endif //SMARTIECOIN_CLASSIC_CONFIG_H])
 
 dnl faketime breaks configure and is only needed for make. Disable it here.
 unset FAKETIME

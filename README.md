@@ -1,7 +1,18 @@
-# Smartiecoin-new-chain The reason of this new chain is for adding master nodes !!! The old chain will continue working as Smartie Coin Classic, more updates will be posted in my discord.
-Official Social Media:
+# Smartie Coin Classic
 
-Twitter: @SmartieCoin
-Instragram: @SmartieCoin
+The original Smartiecoin chain, preserved and maintained by community request. This is the legacy chain with masternode support, now rebranded as **Smartie Coin Classic**.
 
-Discord:  https://discord.gg/smartiecoin
+## Official Social Media
+
+- Twitter: @SmartieCoin
+- Instagram: @SmartieCoin
+- Discord: https://discord.gg/smartiecoin
+- Website: https://smartiecoin.com
+
+## Building
+
+See `doc/` directory for build instructions for your platform.
+
+## License
+
+Smartie Coin Classic is released under the terms of the MIT license. See [COPYING](COPYING) for more information.

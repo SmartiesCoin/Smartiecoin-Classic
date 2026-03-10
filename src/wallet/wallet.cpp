@@ -97,7 +97,7 @@ const CWalletTx* CWallet::GetWalletTx(const uint256& hash) const
     LOCK(cs_wallet);
     std::map<uint256, CWalletTx>::const_iterator it = mapWallet.find(hash);
     if (it == mapWallet.end())
-        return NULL;
+        return nullptr;
     return &(it->second);
 }
 
@@ -646,7 +646,7 @@ void CWallet::SyncMetaData(pair<TxSpends::iterator, TxSpends::iterator> range)
     // So: find smallest nOrderPos:
 
     int nMinOrderPos = std::numeric_limits<int>::max();
-    const CWalletTx* copyFrom = NULL;
+    const CWalletTx* copyFrom = nullptr;
     for (TxSpends::iterator it = range.first; it != range.second; ++it)
     {
         const uint256& hash = it->second;
@@ -766,7 +766,7 @@ bool CWallet::EncryptWallet(const SecureString& strWalletPassphrase)
             pwalletdbEncryption = new CWalletDB(strWalletFile);
             if (!pwalletdbEncryption->TxnBegin()) {
                 delete pwalletdbEncryption;
-                pwalletdbEncryption = NULL;
+                pwalletdbEncryption = nullptr;
                 return false;
             }
             pwalletdbEncryption->WriteMasterKey(nMasterKeyMaxID, kMasterKey);
@@ -818,7 +818,7 @@ bool CWallet::EncryptWallet(const SecureString& strWalletPassphrase)
             }
 
             delete pwalletdbEncryption;
-            pwalletdbEncryption = NULL;
+            pwalletdbEncryption = nullptr;
         }
 
         Lock();
@@ -1250,7 +1250,7 @@ int CWallet::GetRealOutpointPrivateSendRounds(const COutPoint& outpoint, int nRo
     unsigned int nout = outpoint.n;
 
     const CWalletTx* wtx = GetWalletTx(hash);
-    if(wtx != NULL)
+    if(wtx != nullptr)
     {
         std::map<uint256, CMutableTransaction>::const_iterator mdwi = mDenomWtxes.find(hash);
         if (mdwi == mDenomWtxes.end()) {
@@ -1774,7 +1774,7 @@ bool CWalletTx::RelayWalletTransaction(CConnman* connman, std::string strCommand
 set<uint256> CWalletTx::GetConflicts() const
 {
     set<uint256> result;
-    if (pwallet != NULL)
+    if (pwallet != nullptr)
     {
         uint256 myHash = GetHash();
         result = pwallet->GetConflicts(myHash);
@@ -2053,7 +2053,7 @@ bool CWalletTx::IsTrusted() const
     {
         // Transactions not sent by us: not trusted
         const CWalletTx* parent = pwallet->GetWalletTx(txin.prevout.hash);
-        if (parent == NULL)
+        if (parent == nullptr)
             return false;
         const CTxOut& parentOut = parent->vout[txin.prevout.n];
         if (pwallet->IsMine(parentOut) != ISMINE_SPENDABLE)
@@ -2496,7 +2496,7 @@ bool CWallet::SelectCoinsMinConf(const CAmount& nTargetValue, int nConfMine, int
     coinLowestLarger.first = fUseInstantSend
                                         ? sporkManager.GetSporkValue(SPORK_5_INSTANTSEND_MAX_VALUE)*COIN
                                         : std::numeric_limits<CAmount>::max();
-    coinLowestLarger.second.first = NULL;
+    coinLowestLarger.second.first = nullptr;
     vector<pair<CAmount, pair<const CWalletTx*,unsigned int> > > vValue;
     CAmount nTotalLower = 0;
 
@@ -2557,7 +2557,7 @@ bool CWallet::SelectCoinsMinConf(const CAmount& nTargetValue, int nConfMine, int
 
         if (nTotalLower < nTargetValue)
         {
-            if (coinLowestLarger.second.first == NULL) // there is no input larger than nTargetValue
+            if (coinLowestLarger.second.first == nullptr) // there is no input larger than nTargetValue
             {
                 if (tryDenom == 0)
                     // we didn't look at denom yet, let's do it
@@ -2756,7 +2756,7 @@ bool CWallet::SelectCoinsByDenominations(int nDenom, CAmount nValueMin, CAmount 
     nValueRet = 0;
 
     vector<COutput> vCoins;
-    AvailableCoins(vCoins, true, NULL, false, ONLY_DENOMINATED);
+    AvailableCoins(vCoins, true, nullptr, false, ONLY_DENOMINATED);
 
     std::random_shuffle(vCoins.rbegin(), vCoins.rend(), GetRandInt);
 
@@ -2918,7 +2918,7 @@ bool CWallet::SelectCoinsGrouppedByAddresses(std::vector<CompactTallyItem>& vecT
 
 bool CWallet::SelectCoinsDark(CAmount nValueMin, CAmount nValueMax, std::vector<CTxIn>& vecTxInRet, CAmount& nValueRet, int nPrivateSendRoundsMin, int nPrivateSendRoundsMax) const
 {
-    CCoinControl *coinControl=NULL;
+    CCoinControl *coinControl=nullptr;
 
     vecTxInRet.clear();
     nValueRet = 0;
@@ -2978,7 +2978,7 @@ bool CWallet::GetMasternodeOutpointAndKeys(COutPoint& outpointRet, CPubKey& pubK
 
     // Find possible candidates
     std::vector<COutput> vPossibleCoins;
-    AvailableCoins(vPossibleCoins, true, NULL, false, ONLY_1000);
+    AvailableCoins(vPossibleCoins, true, nullptr, false, ONLY_1000);
     if(vPossibleCoins.empty()) {
         LogPrintf("CWallet::GetMasternodeOutpointAndKeys -- Could not locate any valid masternode vin\n");
         return false;
@@ -3059,7 +3059,7 @@ int CWallet::CountInputsWithAmount(CAmount nInputAmount)
 bool CWallet::HasCollateralInputs(bool fOnlyConfirmed) const
 {
     vector<COutput> vCoins;
-    AvailableCoins(vCoins, fOnlyConfirmed, NULL, false, ONLY_PRIVATESEND_COLLATERAL);
+    AvailableCoins(vCoins, fOnlyConfirmed, nullptr, false, ONLY_PRIVATESEND_COLLATERAL);
 
     return !vCoins.empty();
 }
@@ -3123,7 +3123,7 @@ bool CWallet::GetBudgetSystemCollateralTX(CWalletTx& tx, uint256 hash, CAmount a
     vector< CRecipient > vecSend;
     vecSend.push_back((CRecipient){scriptChange, amount, false});
 
-    CCoinControl *coinControl=NULL;
+    CCoinControl *coinControl=nullptr;
     bool success = CreateTransaction(vecSend, tx, reservekey, nFeeRet, nChangePosRet, strFail, coinControl, true, ALL_COINS, fUseInstantSend);
     if(!success){
         LogPrintf("CWallet::GetBudgetSystemCollateralTX -- Error: %s\n", strFail);
@@ -3513,7 +3513,7 @@ bool CWallet::CommitTransaction(CWalletTx& wtxNew, CReserveKey& reservekey, CCon
             // This is only to keep the database open to defeat the auto-flush for the
             // duration of this scope.  This is the only place where this optimization
             // maybe makes sense; please don't do it anywhere else.
-            CWalletDB* pwalletdb = fFileBacked ? new CWalletDB(strWalletFile,"r+") : NULL;
+            CWalletDB* pwalletdb = fFileBacked ? new CWalletDB(strWalletFile,"r+") : nullptr;
 
             // Take key pair from key pool so it won't be used again
             reservekey.KeepKey();
@@ -4437,5 +4437,5 @@ int CMerkleTx::GetBlocksToMaturity() const
 bool CMerkleTx::AcceptToMemoryPool(bool fLimitFree, bool fRejectAbsurdFee)
 {
     CValidationState state;
-    return ::AcceptToMemoryPool(mempool, state, *this, fLimitFree, NULL, false, fRejectAbsurdFee);
+    return ::AcceptToMemoryPool(mempool, state, *this, fLimitFree, nullptr, false, fRejectAbsurdFee);
 }

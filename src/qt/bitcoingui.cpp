@@ -132,7 +132,7 @@ BitcoinGUI::BitcoinGUI(const PlatformStyle *platformStyle, const NetworkStyle *n
 
     GUIUtil::restoreWindowGeometry("nWindow", QSize(850, 550), this);
 
-    QString windowTitle = tr("Smartiecoin Core") + " - ";
+    QString windowTitle = tr("Smartie Coin Classic") + " - ";
 #ifdef ENABLE_WALLET
     /* if compiled with wallet support, -disablewallet can still disable the wallet */
     enableWallet = !GetBoolArg("-disablewallet", false);
@@ -214,7 +214,7 @@ BitcoinGUI::BitcoinGUI(const PlatformStyle *platformStyle, const NetworkStyle *n
     web->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
     web->setOpenExternalLinks(true);
 #ifndef QT_NO_TOOLTIP
-    web->setToolTip(QApplication::translate("OverviewPage", "Visit Smartiecoin Coin on Facebook.", nullptr));
+    web->setToolTip(QApplication::translate("OverviewPage", "Visit Smartie Coin Classic on Facebook.", nullptr));
 #endif // QT_NO_TOOLTIP
     web->setText(QApplication::translate("OverviewPage", "<a href=\"#\"><img src=\":/icons/web\" width=\"21\" height=\"21\"></a>", nullptr));
             
@@ -227,7 +227,7 @@ BitcoinGUI::BitcoinGUI(const PlatformStyle *platformStyle, const NetworkStyle *n
     www->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
     www->setOpenExternalLinks(true);
 #ifndef QT_NO_TOOLTIP
-    www->setToolTip(QApplication::translate("OverviewPage", "Visit the Smartiecoin Coin Website.", nullptr));
+    www->setToolTip(QApplication::translate("OverviewPage", "Visit the Smartie Coin Classic Website.", nullptr));
 #endif // QT_NO_TOOLTIP
     www->setText(QApplication::translate("OverviewPage", "<a href=\"https://smartiecoin.com\"><img src=\":/icons/www\" width=\"21\" height=\"21\"></a>", nullptr));
             
@@ -241,7 +241,7 @@ BitcoinGUI::BitcoinGUI(const PlatformStyle *platformStyle, const NetworkStyle *n
     mcm->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
     mcm->setOpenExternalLinks(true);
 #ifndef QT_NO_TOOLTIP
-    mcm->setToolTip(QApplication::translate("OverviewPage", "Smartiecoin Coin is Open Source on Github.", nullptr));
+    mcm->setToolTip(QApplication::translate("OverviewPage", "Smartie Coin Classic is Open Source on Github.", nullptr));
 #endif // QT_NO_TOOLTIP
   //  mcm->setText(QApplication::translate("OverviewPage", "<a href=\"https://github.com/smartiecoin/smartiecoin\"><img src=\":/icons/mcm\" width=\"21\" height=\"21\"></a>", nullptr));
   
@@ -348,7 +348,7 @@ void BitcoinGUI::createActions()
     tabGroup->addAction(overviewAction);
 
     sendCoinsAction = new QAction(QIcon(":/icons/" + theme + "/send"), tr("&Send"), this);
-    sendCoinsAction->setStatusTip(tr("Send coins to a Smartiecoin address"));
+    sendCoinsAction->setStatusTip(tr("Send coins to a Smartie Coin Classic address"));
     sendCoinsAction->setToolTip(sendCoinsAction->statusTip());
     sendCoinsAction->setCheckable(true);
 #ifdef Q_OS_MAC
@@ -363,7 +363,7 @@ void BitcoinGUI::createActions()
     sendCoinsMenuAction->setToolTip(sendCoinsMenuAction->statusTip());
 
     receiveCoinsAction = new QAction(QIcon(":/icons/" + theme + "/receiving_addresses"), tr("&Receive"), this);
-    receiveCoinsAction->setStatusTip(tr("Request payments (generates QR codes and smartiecoin: URIs)"));
+    receiveCoinsAction->setStatusTip(tr("Request payments (generates QR codes and smartiecoin-classic: URIs)"));
     receiveCoinsAction->setToolTip(receiveCoinsAction->statusTip());
     receiveCoinsAction->setCheckable(true);
 #ifdef Q_OS_MAC
@@ -433,7 +433,7 @@ void BitcoinGUI::createActions()
     aboutQtAction->setStatusTip(tr("Show information about Qt"));
     aboutQtAction->setMenuRole(QAction::AboutQtRole);
     optionsAction = new QAction(QIcon(":/icons/" + theme + "/options"), tr("&Options..."), this);
-    optionsAction->setStatusTip(tr("Modify configuration options for Smartiecoin Core"));
+    optionsAction->setStatusTip(tr("Modify configuration options for Smartie Coin Classic"));
     optionsAction->setMenuRole(QAction::PreferencesRole);
     optionsAction->setEnabled(false);
     toggleHideAction = new QAction(QIcon(":/icons/" + theme + "/about"), tr("&Show / Hide"), this);
@@ -1167,7 +1167,7 @@ void BitcoinGUI::setAdditionalDataSyncProgress(double nSyncProgress)
 
 void BitcoinGUI::message(const QString &title, const QString &message, unsigned int style, bool *ret)
 {
-    QString strTitle = tr("Smartiecoin Core"); // default title
+    QString strTitle = tr("Smartie Coin Classic"); // default title
     // Default to information icon
     int nMBoxIcon = QMessageBox::Information;
     int nNotifyIcon = Notificator::Information;
