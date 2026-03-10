@@ -8,12 +8,27 @@ No chain reset. No protocol changes. Your existing wallet and blockchain data wi
 
 ## What's New
 
-### Rebrand to Smartie Coin Classic
-- All GUI strings, window titles, tooltips, and about dialogs updated to "Smartie Coin Classic"
-- Unit descriptions updated (SMARTIE, mSMARTIE, etc.)
+### Rebrand to Smartiecoin Classic
+- All GUI strings, window titles, tooltips, and about dialogs updated to "Smartiecoin Classic"
 - Application name updated to `SmartieCoinClassic-Qt`
 - Copyright updated to 2026
 - Repository renamed from `smartiecoin-legacy` to `Smartiecoin-Classic`
+
+### Ticker Change: SMARTIE → SMTC
+- Currency unit changed from `SMARTIE` to `SMTC` across all RPC, GUI, and CLI output
+- Updated denomination references: `0.01 SMTC`, `0.1 SMTC`, `1 SMTC`, `10 SMTC`
+- Updated masternode collateral display to `1000 SMTC`
+- This is a cosmetic-only change — no consensus or protocol impact
+
+### Complete Cosmetic Rebranding (32 files)
+All non-copyright references to "Smartiecoin Core" replaced with "Smartiecoin Classic":
+- **GUI:** About dialog, splash screen, address book, send dialog, RPC console, PrivateSend help, intro/welcome screen, shutdown window
+- **Daemon/CLI:** Startup messages, stop/shutdown messages, version strings
+- **Error messages:** Lock file warnings, wallet version errors, sanity check failures, clock warnings, network connection errors
+- **RPC:** Help text, mining error messages, wallet dump headers
+- **Build system:** Consensus library metadata (`libsmartiecoinconsensus.pc.in`), Windows resource file
+- **Startup shortcuts:** Windows Start Menu and Linux `.desktop` entry names
+- **Block explorer:** Deployed at `explorer.smartiecoinclassic.com` with SMTC branding
 
 ### Bug Fixes
 
@@ -46,16 +61,16 @@ No chain reset. No protocol changes. Your existing wallet and blockchain data wi
 - Wallet file format - existing wallets work without changes
 - DNS seed nodes
 
-## Checksums
-
-```
-SHA256 checksums will be added after build
-```
-
 ## Downloads
 
-- **Windows (64-bit):** `smartiecoin-classic-1.13.0-win64-setup.exe`
-- **Linux (64-bit):** `smartiecoin-classic-1.13.0-x86_64-linux-gnu.tar.gz`
+- **Windows (64-bit):** `smartiecoin-classic-1.13.0-win64.zip`
+- **Linux (64-bit):** `smartiecoin-classic-1.13.0-linux64.tar.gz`
+
+### Included Binaries
+- `smartiecoinclassicd` / `smartiecoinclassicd.exe` — Daemon
+- `smartiecoinclassic-cli` / `smartiecoinclassic-cli.exe` — RPC client
+- `smartiecoinclassic-qt` / `smartiecoinclassic-qt.exe` — Qt GUI wallet
+- `smartiecoin-tx` / `smartiecoinclassic-tx.exe` — Transaction utility
 
 ## Building from Source
 
