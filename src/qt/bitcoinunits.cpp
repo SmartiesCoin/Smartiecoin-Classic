@@ -47,9 +47,9 @@ QString BitcoinUnits::name(int unit)
     {
         switch(unit)
         {
-            case SMARTIE: return QString("SMARTIE");
-            case mSMARTIE: return QString("mSMARTIE");
-            case uSMARTIE: return QString::fromUtf8("μSMARTIE");
+            case SMARTIE: return QString("SMTC");
+            case mSMARTIE: return QString("mSMTC");
+            case uSMARTIE: return QString::fromUtf8("μSMTC");
             case veffs: return QString("veffs");
             default: return QString("???");
         }
@@ -58,9 +58,9 @@ QString BitcoinUnits::name(int unit)
     {
         switch(unit)
         {
-            case SMARTIE: return QString("tSMARTIE");
-            case mSMARTIE: return QString("mtSMARTIE");
-            case uSMARTIE: return QString::fromUtf8("μtSMARTIE");
+            case SMARTIE: return QString("tSMTC");
+            case mSMARTIE: return QString("mtSMTC");
+            case uSMARTIE: return QString::fromUtf8("μtSMTC");
             case veffs: return QString("tveffs");
             default: return QString("???");
         }
